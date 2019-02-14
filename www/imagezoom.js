@@ -1,4 +1,4 @@
-﻿/*
+/*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -19,19 +19,15 @@
  *
 */
 
-/*jslint sloppy:true */
+var exec = require('cordova/exec');
 
-var splash = require('cordova/splashscreen');
-
-var SplashScreen = {
-    show: function () {
-        splash.show();
+var imagezoom = {
+    show:function() {
+        exec(null, null, "ImageZoom", "show", []);
     },
-    hide: function () {
-        splash.hide();
+    hide:function() {
+        exec(null, null, "ImageZoom", "hide", []);
     }
 };
 
-module.exports = SplashScreen;
-
-require("cordova/exec/proxy").add("SplashScreen", SplashScreen);
+module.exports = imagezoom;

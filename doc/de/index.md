@@ -17,13 +17,13 @@
     under the License.
 -->
 
-# cordova-plugin-splashscreen
+# cordova-plugin-imagezoom
 
 Dieses Plugin zeigt und verbirgt einen Splash-Screen beim Start der Anwendung.
 
 ## Installation
 
-    cordova plugin add cordova-plugin-splashscreen
+    cordova plugin add cordova-plugin-imagezoom
     
 
 ## Unterstützte Plattformen
@@ -37,42 +37,42 @@ Dieses Plugin zeigt und verbirgt einen Splash-Screen beim Start der Anwendung.
 
 ## Methoden
 
-*   SplashScreen.Show
-*   SplashScreen.Hide
+*   ImageZoom.Show
+*   ImageZoom.Hide
 
 ### Android Eigenarten
 
 Sie müssen in der config.xml folgende Einstellungen vornehmen:
 
-    <preference name="SplashScreen" value="foo" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="ImageZoom" value="foo" />
+    <preference name="ImageZoomDelay" value="10000" />
     
 
-Wo Foo ist der Name der Datei Splashscreen, vorzugsweise eine 9-Patch-Datei. Stellen Sie sicher, Splashcreen Dateien zu Ihrem res/xml-Verzeichnis unter den entsprechenden Ordnern hinzuzufügen. Der zweite Parameter stellt dar, wie lange das Splashscreen in Millisekunden angezeigt werden. Es wird standardmäßig auf 3000 ms. Weitere Informationen finden Sie unter [Symbole und Splash-Screens][1].
+Wo Foo ist der Name der Datei Imagezoom, vorzugsweise eine 9-Patch-Datei. Stellen Sie sicher, Splashcreen Dateien zu Ihrem res/xml-Verzeichnis unter den entsprechenden Ordnern hinzuzufügen. Der zweite Parameter stellt dar, wie lange das Imagezoom in Millisekunden angezeigt werden. Es wird standardmäßig auf 3000 ms. Weitere Informationen finden Sie unter [Symbole und Splash-Screens][1].
 
  [1]: http://cordova.apache.org/docs/en/edge/config_ref_images.md.html
 
-## SplashScreen.Hide
+## ImageZoom.Hide
 
 Schließen Sie den Splash-Screen.
 
-    navigator.splashscreen.hide();
+    navigator.imagezoom.hide();
     
 
 ### BlackBerry 10, WP8, iOS Eigenarten
 
-Die Datei `config.xml` `AutoHideSplashScreen` Einstellung muss `false` sein. Verstecken des Begrüßungsbildschirms für zwei Sekunden Verzögerung, fügen Sie einen Timer wie die folgende in der `deviceready`-Ereignishandler:
+Die Datei `config.xml` `AutoHideImageZoom` Einstellung muss `false` sein. Verstecken des Begrüßungsbildschirms für zwei Sekunden Verzögerung, fügen Sie einen Timer wie die folgende in der `deviceready`-Ereignishandler:
 
         setTimeout(function() {
-            navigator.splashscreen.hide();
+            navigator.imagezoom.hide();
         }, 2000);
     
 
-## SplashScreen.Show
+## ImageZoom.Show
 
 Zeigt den Begrüßungsbildschirm.
 
-    navigator.splashscreen.show();
+    navigator.imagezoom.show();
     
 
-Ihre Anwendung kann nicht `navigator.splashscreen.show()` aufrufen, bis die app begonnen hat und das `deviceready`-Ereignis ausgelöst hat. Aber da in der Regel der Splash-Screen soll sichtbar sein, bevor die Anwendung gestartet wurde, scheint die Niederlage der Zweck des Begrüßungsbildschirms. Somit einige Konfiguration in der Datei `config.xml` werden automatisch die Splash `show` sofort nach Ihrer app-Start und Bildschirm bevor es voll begonnen hat, und das `deviceready`-Ereignis empfangen. Weitere Informationen zu dieser Konfiguration finden Sie unter [Symbole und Splash-Screens][1]. Aus diesem Grund ist es unwahrscheinlich, dass Sie `navigator.splashscreen.show()` damit den Splash-Screen sichtbar ist für app-Start aufrufen müssen.
+Ihre Anwendung kann nicht `navigator.imagezoom.show()` aufrufen, bis die app begonnen hat und das `deviceready`-Ereignis ausgelöst hat. Aber da in der Regel der Splash-Screen soll sichtbar sein, bevor die Anwendung gestartet wurde, scheint die Niederlage der Zweck des Begrüßungsbildschirms. Somit einige Konfiguration in der Datei `config.xml` werden automatisch die Splash `show` sofort nach Ihrer app-Start und Bildschirm bevor es voll begonnen hat, und das `deviceready`-Ereignis empfangen. Weitere Informationen zu dieser Konfiguration finden Sie unter [Symbole und Splash-Screens][1]. Aus diesem Grund ist es unwahrscheinlich, dass Sie `navigator.imagezoom.show()` damit den Splash-Screen sichtbar ist für app-Start aufrufen müssen.

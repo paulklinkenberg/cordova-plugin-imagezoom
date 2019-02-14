@@ -7,7 +7,6 @@ Thumbs.db
 *.DS_Store
 
 *.bak
-*.cache
 *.log
 *.swp
 *.user
@@ -26,3 +25,4 @@ node_modules
 /tests/ios/CDVSplashScreenTest/CDVSplashScreenTest.xcodeproj/xcuserdata/
 
 /tests/ios/CDVSplashScreenTest.xcworkspace/xcuserdata/
+/.idea/

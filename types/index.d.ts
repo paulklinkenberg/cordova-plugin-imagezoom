@@ -1,5 +1,5 @@
-// Type definitions for Apache Cordova Splashscreen plugin
-// Project: https://github.com/apache/cordova-plugin-splashscreen
+// Type definitions for Apache Cordova Imagezoom plugin
+// Project: https://github.com/apache/cordova-plugin-imagezoom
 // Definitions by: Microsoft Open Technologies Inc <http://msopentech.com>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // 
@@ -8,7 +8,7 @@
 
 interface Navigator {
     /** This plugin displays and hides a splash screen during application launch. */
-    splashscreen: {
+    imagezoom: {
         /** Dismiss the splash screen. */
         hide(): void;
         /** Displays the splash screen. */

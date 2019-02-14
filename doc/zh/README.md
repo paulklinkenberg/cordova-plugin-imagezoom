@@ -17,18 +17,18 @@
 #         under the License.
 -->
 
-# cordova-plugin-splashscreen
+# cordova-plugin-imagezoom
 
-[![Build Status](https://travis-ci.org/apache/cordova-plugin-splashscreen.svg)](https://travis-ci.org/apache/cordova-plugin-splashscreen)
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-imagezoom.svg)](https://travis-ci.org/apache/cordova-plugin-imagezoom)
 
 這個外掛程式顯示和隱藏在應用程式啟動期間的初始螢幕。
 
 ## 安裝
 
     // npm hosted (new) id
-    cordova plugin add cordova-plugin-splashscreen
+    cordova plugin add cordova-plugin-imagezoom
     // you may also install directly from this repo
-    cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
+    cordova plugin add https://github.com/apache/cordova-plugin-imagezoom.git
     
 
 ## 支援的平臺
@@ -44,15 +44,15 @@
 
 ## 方法
 
-  * splashscreen.show
-  * splashscreen.hide
+  * imagezoom.show
+  * imagezoom.hide
 
 ### Android 的怪癖
 
 在你的`config.xml`，您需要添加以下優惠:
 
-    <preference name="SplashScreen" value="foo" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="ImageZoom" value="foo" />
+    <preference name="ImageZoomDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
     
 
@@ -67,53 +67,53 @@
 你可以用你的`config.xml`下列優先選項:
 
     <platform name="browser">
-        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "img/logo.png" -->
-        <preference name="SplashScreenDelay" value="10000" /> <!-- defaults to "3000" -->
-        <preference name="SplashScreenBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
-        <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
-        <preference name="SplashScreenWidth" value="600" /> <!-- defaults to "170" -->
-        <preference name="SplashScreenHeight" value="300" /> <!-- defaults to "200" -->
+        <preference name="ImageZoom" value="images/browser/imagezoom.jpg" /> <!-- defaults to "img/logo.png" -->
+        <preference name="ImageZoomDelay" value="10000" /> <!-- defaults to "3000" -->
+        <preference name="ImageZoomBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
+        <preference name="ShowImageZoom" value="false" /> <!-- defaults to "true" -->
+        <preference name="ImageZoomWidth" value="600" /> <!-- defaults to "170" -->
+        <preference name="ImageZoomHeight" value="300" /> <!-- defaults to "200" -->
     </platform>
     
 
 ### iOS 的怪癖
 
-  * `FadeSplashScreen`(預設為`true`的布林值): 設置為`false` ，以防止出現閃屏衰落和退出其顯示狀態發生變化時。
+  * `FadeImageZoom`(預設為`true`的布林值): 設置為`false` ，以防止出現閃屏衰落和退出其顯示狀態發生變化時。
     
-        <preference name="FadeSplashScreen" value="false"/>
+        <preference name="FadeImageZoom" value="false"/>
         
 
-  * `FadeSplashScreenDuration`(float，預設為`2`): 指定的閃屏秒數淡出效果來執行。
+  * `FadeImageZoomDuration`(float，預設為`2`): 指定的閃屏秒數淡出效果來執行。
     
-        <preference name="FadeSplashScreenDuration" value="4"/>
+        <preference name="FadeImageZoomDuration" value="4"/>
         
 
-  * `ShowSplashScreenSpinner`(boolean, `true`的布林值): 設置為`false`來隱藏初始螢幕微調框。
+  * `ShowImageZoomSpinner`(boolean, `true`的布林值): 設置為`false`來隱藏初始螢幕微調框。
     
-        <preference name="ShowSplashScreenSpinner" value="false"/>
+        <preference name="ShowImageZoomSpinner" value="false"/>
         
 
-## splashscreen.hide
+## imagezoom.hide
 
 解雇的閃屏。
 
-    navigator.splashscreen.hide();
+    navigator.imagezoom.hide();
     
 
 ### 黑莓 10，WP8，iOS 怪癖
 
-`config.xml` 檔 `AutoHideSplashScreen` 設置必須是 `假` 的。 若要延遲兩秒鐘隱藏的閃屏，`deviceready` 事件處理常式中添加一個計時器，如下所示：
+`config.xml` 檔 `AutoHideImageZoom` 設置必須是 `假` 的。 若要延遲兩秒鐘隱藏的閃屏，`deviceready` 事件處理常式中添加一個計時器，如下所示：
 
         setTimeout(function() {
-            navigator.splashscreen.hide();
+            navigator.imagezoom.hide();
         }, 2000);
     
 
-## splashscreen.show
+## imagezoom.show
 
 顯示初始螢幕。
 
-    navigator.splashscreen.show();
+    navigator.imagezoom.show();
     
 
-您的應用程式無法調用 `navigator.splashscreen.show()`，直到該應用程式已啟動，且觸發了 `deviceready` 事件。 但是，由於通常的閃屏為了是可見的在您的應用程式啟動之前，這似乎會打敗閃屏的目的。 提供一些配置在 `config.xml` 中的會自動 `show` 初始螢幕您的應用程式啟動後立即和之前它已經完全起步並收到 `deviceready` 事件。 做這種配置的詳細資訊，請參閱 [圖示和啟動畫面](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html)。 出於此原因，不太可能您需要調用 `navigator.splashscreen.show()`，使初始螢幕可見為應用程式啟動。
+您的應用程式無法調用 `navigator.imagezoom.show()`，直到該應用程式已啟動，且觸發了 `deviceready` 事件。 但是，由於通常的閃屏為了是可見的在您的應用程式啟動之前，這似乎會打敗閃屏的目的。 提供一些配置在 `config.xml` 中的會自動 `show` 初始螢幕您的應用程式啟動後立即和之前它已經完全起步並收到 `deviceready` 事件。 做這種配置的詳細資訊，請參閱 [圖示和啟動畫面](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html)。 出於此原因，不太可能您需要調用 `navigator.imagezoom.show()`，使初始螢幕可見為應用程式啟動。

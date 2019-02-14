@@ -17,7 +17,7 @@
 #         under the License.
 -->
 
-# CDVSplashScreen の iOS のテスト
+# CDVImageZoom の iOS のテスト
 
 `Node.js` `コルドバ`ios をプルするをインストールする必要があります。.
 
@@ -30,8 +30,8 @@
 
 # Xcode からテスト
 
-  1. `CDVSplashScreenTest.xcworkspace`ファイルを起動します。
-  2. スキーム] ドロップダウン メニューから"CDVSplashScreenLibTests"を選択します。
+  1. `CDVImageZoomTest.xcworkspace`ファイルを起動します。
+  2. スキーム] ドロップダウン メニューから"CDVImageZoomLibTests"を選択します。
   3. クリックし、`再生`ボタンを押し、テストを実行する`レンチ`のアイコンを選択
 
 # コマンドラインからテスト

@@ -20,18 +20,18 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <Cordova/CDVScreenOrientationDelegate.h>
-#import "CDVSplashScreen.h"
+#import "CDVImageZoom.h"
 #import "ImageNameTestDelegates.h"
 
 const CDV_iOSDevice CDV_iOSDeviceZero = { 0, 0, 0, 0, 0, 0 };
 
 @interface ImageNameTest : XCTestCase
 
-@property (nonatomic, strong) CDVSplashScreen* plugin;
+@property (nonatomic, strong) CDVImageZoom* plugin;
 
 @end
 
-@interface CDVSplashScreen ()
+@interface CDVImageZoom ()
 
 // expose private interface
 - (NSString*)getImageName:(UIInterfaceOrientation)currentOrientation delegate:(id<CDVScreenOrientationDelegate>)orientationDelegate device:(CDV_iOSDevice)device;
@@ -44,7 +44,7 @@ const CDV_iOSDevice CDV_iOSDeviceZero = { 0, 0, 0, 0, 0, 0 };
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    self.plugin = [[CDVSplashScreen alloc] init];
+    self.plugin = [[CDVImageZoom alloc] init];
 }
 
 - (void)tearDown {

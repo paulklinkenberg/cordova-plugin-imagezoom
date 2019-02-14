@@ -22,37 +22,37 @@
 /* jshint jasmine: true */
 
 exports.defineAutoTests = function () {
-    describe('Splashscreen (cordova)', function () {
-        it("splashscreen.spec.1 should exist", function () {
-            expect(navigator.splashscreen).toBeDefined();
+    describe('Imagezoom (cordova)', function () {
+        it("imagezoom.spec.1 should exist", function () {
+            expect(navigator.imagezoom).toBeDefined();
         });
 
-        it("splashscreen.spec.2 show method should exist", function () {
-            expect(navigator.splashscreen.show).toBeDefined();
-            expect(typeof navigator.splashscreen.show).toBe('function');
+        it("imagezoom.spec.2 show method should exist", function () {
+            expect(navigator.imagezoom.show).toBeDefined();
+            expect(typeof navigator.imagezoom.show).toBe('function');
         });
 
-        it("splashscreen.spec.3 hide method should exist", function () {
-            expect(navigator.splashscreen.hide).toBeDefined();
-            expect(typeof navigator.splashscreen.hide).toBe('function');
+        it("imagezoom.spec.3 hide method should exist", function () {
+            expect(navigator.imagezoom.hide).toBeDefined();
+            expect(typeof navigator.imagezoom.hide).toBe('function');
         });
     });
 };
 
 exports.defineManualTests = function (contentEl, createActionButton) {
     function showFor(duration) {
-        navigator.splashscreen.show();
+        navigator.imagezoom.show();
         window.setTimeout(function () {
-            navigator.splashscreen.hide();
+            navigator.imagezoom.hide();
         }, 1000 * duration);
     }
 
-    contentEl.innerHTML = '<h1>Splashscreen Tests</h1>' +
-        '<h3>Note for WP: AutoHideSplashScreen must be set to false in config.xml</h3>' +
+    contentEl.innerHTML = '<h1>Imagezoom Tests</h1>' +
+        '<h3>Note for WP: AutoHideImageZoom must be set to false in config.xml</h3>' +
         '<div id="show1"></div>' +
-        'Expected result: Will show the Cordova splashscreen for 1 second' +
+        'Expected result: Will show the Cordova imagezoom for 1 second' +
         '</p> <div id="show5"></div>' +
-        'Expected result: Will show the Cordova splashscreen for 5 seconds';
+        'Expected result: Will show the Cordova imagezoom for 5 seconds';
 
     createActionButton('Show for 1 second', function () {
         showFor(1);

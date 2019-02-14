@@ -17,13 +17,13 @@
     under the License.
 -->
 
-# cordova-plugin-splashscreen
+# cordova-plugin-imagezoom
 
 Ten plugin wyświetla i ukrywa ekran powitalny podczas uruchamiania aplikacji.
 
 ## Instalacja
 
-    cordova plugin add cordova-plugin-splashscreen
+    cordova plugin add cordova-plugin-imagezoom
     
 
 ## Obsługiwane platformy
@@ -37,42 +37,42 @@ Ten plugin wyświetla i ukrywa ekran powitalny podczas uruchamiania aplikacji.
 
 ## Metody
 
-*   splashscreen.show
-*   splashscreen.Hide
+*   imagezoom.show
+*   imagezoom.Hide
 
 ### Dziwactwa Androida
 
 W pliku config.xml musisz dodać następujące preferencje:
 
-    <preference name="SplashScreen" value="foo" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="ImageZoom" value="foo" />
+    <preference name="ImageZoomDelay" value="10000" />
     
 
 Gdzie foo jest nazwą pliku ekranu powitalnego, najlepiej 9 łatce. Upewnij się dodać pliki splashcreen do katalogu res/xml w odpowiednich folderach. Drugi parametr reprezentuje, jak długo ekranu powitalnego pojawi się w milisekundach. Domyślnie 3000 ms. Aby uzyskać więcej informacji, zobacz [ikony i ekrany powitalne w aplikacjach][1].
 
  [1]: http://cordova.apache.org/docs/en/edge/config_ref_images.md.html
 
-## splashscreen.Hide
+## imagezoom.Hide
 
 Odrzucić ten opryskaæ têcza.
 
-    navigator.splashscreen.hide();
+    navigator.imagezoom.hide();
     
 
 ### Jeżyna 10, WP8, iOS dziwactwo
 
-Plik `config.xml` `AutoHideSplashScreen` ustawienie musi być `false`. Opóźnienia, ukrywanie ekranu powitalnego przez dwie sekundy, dodać timer następujących w `deviceready` obsługa zdarzeń:
+Plik `config.xml` `AutoHideImageZoom` ustawienie musi być `false`. Opóźnienia, ukrywanie ekranu powitalnego przez dwie sekundy, dodać timer następujących w `deviceready` obsługa zdarzeń:
 
         setTimeout(function() {
-            navigator.splashscreen.hide();
+            navigator.imagezoom.hide();
         }, 2000);
     
 
-## splashscreen.show
+## imagezoom.show
 
 Wyświetla ekran powitalny.
 
-    navigator.splashscreen.show();
+    navigator.imagezoom.show();
     
 
-Aplikacja nie można wywołać `navigator.splashscreen.show()`, aż aplikacja została uruchomiona i zdarzenie `deviceready` został zwolniony. Ale ponieważ zazwyczaj opryskać tęcza ma być widoczne przed rozpoczęciem aplikacji, wydaje się sprzeczne z celem ekranu powitalnego. Dostarczanie niektórych konfiguracji w `pliku config.xml` będzie automatycznie `show` splash na ekranie natychmiast po uruchomienie aplikacji i przed pełni rozpoczął i odebrał zdarzenie `deviceready`. Aby uzyskać więcej informacji na robienie tej konfiguracji, zobacz [ikony i ekrany powitalne w aplikacjach][1]. Z tego powodu jest mało prawdopodobne, należy zadzwonić `navigator.splashscreen.show()`, aby wyświetlić ekran powitalny dla uruchamiania aplikacji.
+Aplikacja nie można wywołać `navigator.imagezoom.show()`, aż aplikacja została uruchomiona i zdarzenie `deviceready` został zwolniony. Ale ponieważ zazwyczaj opryskać tęcza ma być widoczne przed rozpoczęciem aplikacji, wydaje się sprzeczne z celem ekranu powitalnego. Dostarczanie niektórych konfiguracji w `pliku config.xml` będzie automatycznie `show` splash na ekranie natychmiast po uruchomienie aplikacji i przed pełni rozpoczął i odebrał zdarzenie `deviceready`. Aby uzyskać więcej informacji na robienie tej konfiguracji, zobacz [ikony i ekrany powitalne w aplikacjach][1]. Z tego powodu jest mało prawdopodobne, należy zadzwonić `navigator.imagezoom.show()`, aby wyświetlić ekran powitalny dla uruchamiania aplikacji.

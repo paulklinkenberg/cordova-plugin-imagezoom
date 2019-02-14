@@ -17,10 +17,10 @@
  under the License.
  */
 
-#import "CDVViewController+SplashScreen.h"
+#import "CDVViewController+ImageZoom.h"
 #import <objc/runtime.h>
 
-@implementation CDVViewController (SplashScreen)
+@implementation CDVViewController (ImageZoom)
 
 @dynamic enabledAutorotation;
 

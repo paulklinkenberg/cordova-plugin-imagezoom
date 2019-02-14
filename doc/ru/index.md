@@ -17,13 +17,13 @@
     under the License.
 -->
 
-# cordova-plugin-splashscreen
+# cordova-plugin-imagezoom
 
 Этот плагин отображает и скрывает экран-заставку при запуске приложения.
 
 ## Установка
 
-    cordova plugin add cordova-plugin-splashscreen
+    cordova plugin add cordova-plugin-imagezoom
     
 
 ## Поддерживаемые платформы
@@ -37,39 +37,39 @@
 
 ## Методы
 
-*   splashscreen.show
-*   splashscreen.hide
+*   imagezoom.show
+*   imagezoom.hide
 
 ### Особенности Android
 
 В вашем файле config.xml необходимо добавить следующие настройки:
 
-`<preference name="SplashScreen" value="foo" />` `<preference name="SplashScreenDelay" value="10000" />`
+`<preference name="ImageZoom" value="foo" />` `<preference name="ImageZoomDelay" value="10000" />`
 
-Где foo это имя файла splashscreen, желательно 9 заплатку. Убедитесь в том добавить ваши splashcreen файлы в папку res/xml в соответствующие папки. Второй параметр представляет, как долго splashscreen появится в миллисекундах. По умолчанию он 3000 МС. Увидеть [иконки и заставки][1] для получения дополнительной информации.
+Где foo это имя файла imagezoom, желательно 9 заплатку. Убедитесь в том добавить ваши splashcreen файлы в папку res/xml в соответствующие папки. Второй параметр представляет, как долго imagezoom появится в миллисекундах. По умолчанию он 3000 МС. Увидеть [иконки и заставки][1] для получения дополнительной информации.
 
  [1]: http://cordova.apache.org/docs/en/edge/config_ref_images.md.html
 
-## splashscreen.hide
+## imagezoom.hide
 
 Закройте экран-заставка.
 
-    Navigator.SplashScreen.Hide();
+    Navigator.ImageZoom.Hide();
     
 
 ### Особенности BlackBerry 10, WP8, iOS
 
-`config.xml`Файла `AutoHideSplashScreen` должен быть `false` . Для задержки скрытия заставки на две секунды, добавить таймер, например в `deviceready` обработчик событий:
+`config.xml`Файла `AutoHideImageZoom` должен быть `false` . Для задержки скрытия заставки на две секунды, добавить таймер, например в `deviceready` обработчик событий:
 
-        setTimeout(function() {navigator.splashscreen.hide();
+        setTimeout(function() {navigator.imagezoom.hide();
         }, 2000);
     
 
-## splashscreen.show
+## imagezoom.show
 
 Отображает экран-заставку.
 
-    Navigator.SplashScreen.Show();
+    Navigator.ImageZoom.Show();
     
 
-Ваше приложение не может вызвать `navigator.splashscreen.show()` до тех пор, пока приложение началась и `deviceready` событие инициировано. Но поскольку обычно экран-заставка должен быть видимым до начала вашего приложения, что казалось бы поражение цели экрана-заставки. Предоставление некоторых конфигурации в `config.xml` будет автоматически `show` экран-заставку сразу же после запуска вашего приложения и перед его полностью запущен и получил `deviceready` событие. Увидеть [иконки и заставки][1] для получения дополнительной информации на делать этой конфигурации. По этой причине маловероятно, вам нужно вызвать `navigator.splashscreen.show()` для отображения экрана-заставки для запуска приложения.
+Ваше приложение не может вызвать `navigator.imagezoom.show()` до тех пор, пока приложение началась и `deviceready` событие инициировано. Но поскольку обычно экран-заставка должен быть видимым до начала вашего приложения, что казалось бы поражение цели экрана-заставки. Предоставление некоторых конфигурации в `config.xml` будет автоматически `show` экран-заставку сразу же после запуска вашего приложения и перед его полностью запущен и получил `deviceready` событие. Увидеть [иконки и заставки][1] для получения дополнительной информации на делать этой конфигурации. По этой причине маловероятно, вам нужно вызвать `navigator.imagezoom.show()` для отображения экрана-заставки для запуска приложения.

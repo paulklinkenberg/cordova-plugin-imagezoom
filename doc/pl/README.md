@@ -17,18 +17,18 @@
 #         under the License.
 -->
 
-# cordova-plugin-splashscreen
+# cordova-plugin-imagezoom
 
-[![Build Status](https://travis-ci.org/apache/cordova-plugin-splashscreen.svg)](https://travis-ci.org/apache/cordova-plugin-splashscreen)
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-imagezoom.svg)](https://travis-ci.org/apache/cordova-plugin-imagezoom)
 
 Ten plugin wyświetla i ukrywa ekran powitalny podczas uruchamiania aplikacji.
 
 ## Instalacja
 
     // npm hosted (new) id
-    cordova plugin add cordova-plugin-splashscreen
+    cordova plugin add cordova-plugin-imagezoom
     // you may also install directly from this repo
-    cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
+    cordova plugin add https://github.com/apache/cordova-plugin-imagezoom.git
     
 
 ## Obsługiwane platformy
@@ -44,15 +44,15 @@ Ten plugin wyświetla i ukrywa ekran powitalny podczas uruchamiania aplikacji.
 
 ## Metody
 
-  * splashscreen.show
-  * splashscreen.Hide
+  * imagezoom.show
+  * imagezoom.Hide
 
 ### Dziwactwa Androida
 
 W pliku `config.xml`musisz dodać następujące preferencje:
 
-    <preference name="SplashScreen" value="foo" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="ImageZoom" value="foo" />
+    <preference name="ImageZoomDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
     
 
@@ -67,53 +67,53 @@ Plugin ładuje rozchlapać dolarowe, gdy zmienia orientację, tak można określ
 W pliku `config.xml`można użyć następujące preferencje:
 
     <platform name="browser">
-        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "img/logo.png" -->
-        <preference name="SplashScreenDelay" value="10000" /> <!-- defaults to "3000" -->
-        <preference name="SplashScreenBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
-        <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
-        <preference name="SplashScreenWidth" value="600" /> <!-- defaults to "170" -->
-        <preference name="SplashScreenHeight" value="300" /> <!-- defaults to "200" -->
+        <preference name="ImageZoom" value="images/browser/imagezoom.jpg" /> <!-- defaults to "img/logo.png" -->
+        <preference name="ImageZoomDelay" value="10000" /> <!-- defaults to "3000" -->
+        <preference name="ImageZoomBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
+        <preference name="ShowImageZoom" value="false" /> <!-- defaults to "true" -->
+        <preference name="ImageZoomWidth" value="600" /> <!-- defaults to "170" -->
+        <preference name="ImageZoomHeight" value="300" /> <!-- defaults to "200" -->
     </platform>
     
 
 ### Dziwactwa iOS
 
-  * `FadeSplashScreen` (wartość logiczna, domyślnie `true`): zestaw na `false` , aby zapobiec Znikająca i odkładane po zmianie stanu wyświetlania ekranu powitalnego.
+  * `FadeImageZoom` (wartość logiczna, domyślnie `true`): zestaw na `false` , aby zapobiec Znikająca i odkładane po zmianie stanu wyświetlania ekranu powitalnego.
     
-        <preference name="FadeSplashScreen" value="false"/>
+        <preference name="FadeImageZoom" value="false"/>
         
 
-  * `FadeSplashScreenDuration` (float, domyślnie `2`): określa liczbę sekund dla ekranu powitalnego zanikanie efekt do wykonać.
+  * `FadeImageZoomDuration` (float, domyślnie `2`): określa liczbę sekund dla ekranu powitalnego zanikanie efekt do wykonać.
     
-        <preference name="FadeSplashScreenDuration" value="4"/>
+        <preference name="FadeImageZoomDuration" value="4"/>
         
 
-  * `ShowSplashScreenSpinner` (wartość logiczna, domyślnie `true`): zestaw na `false` , aby ukryć pokrętła ekran powitalny.
+  * `ShowImageZoomSpinner` (wartość logiczna, domyślnie `true`): zestaw na `false` , aby ukryć pokrętła ekran powitalny.
     
-        <preference name="ShowSplashScreenSpinner" value="false"/>
+        <preference name="ShowImageZoomSpinner" value="false"/>
         
 
-## splashscreen.Hide
+## imagezoom.Hide
 
 Odrzucić ten opryskaæ têcza.
 
-    navigator.splashscreen.hide();
+    navigator.imagezoom.hide();
     
 
 ### Jeżyna 10, WP8, iOS dziwactwo
 
-Plik `config.xml` `AutoHideSplashScreen` ustawienie musi być `false`. Opóźnienia, ukrywanie ekranu powitalnego przez dwie sekundy, dodać timer następujących w `deviceready` obsługa zdarzeń:
+Plik `config.xml` `AutoHideImageZoom` ustawienie musi być `false`. Opóźnienia, ukrywanie ekranu powitalnego przez dwie sekundy, dodać timer następujących w `deviceready` obsługa zdarzeń:
 
         setTimeout(function() {
-            navigator.splashscreen.hide();
+            navigator.imagezoom.hide();
         }, 2000);
     
 
-## splashscreen.show
+## imagezoom.show
 
 Wyświetla ekran powitalny.
 
-    navigator.splashscreen.show();
+    navigator.imagezoom.show();
     
 
-Aplikacja nie można wywołać `navigator.splashscreen.show()`, aż aplikacja została uruchomiona i zdarzenie `deviceready` został zwolniony. Ale ponieważ zazwyczaj opryskać tęcza ma być widoczne przed rozpoczęciem aplikacji, wydaje się sprzeczne z celem ekranu powitalnego. Dostarczanie niektórych konfiguracji w `pliku config.xml` będzie automatycznie `show` splash na ekranie natychmiast po uruchomienie aplikacji i przed pełni rozpoczął i odebrał zdarzenie `deviceready`. Aby uzyskać więcej informacji na robienie tej konfiguracji, zobacz [ikony i ekrany powitalne w aplikacjach](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html). Z tego powodu jest mało prawdopodobne, należy zadzwonić `navigator.splashscreen.show()`, aby wyświetlić ekran powitalny dla uruchamiania aplikacji.
+Aplikacja nie można wywołać `navigator.imagezoom.show()`, aż aplikacja została uruchomiona i zdarzenie `deviceready` został zwolniony. Ale ponieważ zazwyczaj opryskać tęcza ma być widoczne przed rozpoczęciem aplikacji, wydaje się sprzeczne z celem ekranu powitalnego. Dostarczanie niektórych konfiguracji w `pliku config.xml` będzie automatycznie `show` splash na ekranie natychmiast po uruchomienie aplikacji i przed pełni rozpoczął i odebrał zdarzenie `deviceready`. Aby uzyskać więcej informacji na robienie tej konfiguracji, zobacz [ikony i ekrany powitalne w aplikacjach](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html). Z tego powodu jest mało prawdopodobne, należy zadzwonić `navigator.imagezoom.show()`, aby wyświetlić ekran powitalny dla uruchamiania aplikacji.

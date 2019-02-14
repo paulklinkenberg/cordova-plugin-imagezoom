@@ -19,7 +19,7 @@
 
 #import <Cordova/CDVViewController.h>
 
-@interface CDVViewController (SplashScreen)
+@interface CDVViewController (ImageZoom)
 
 @property (nonatomic, assign) BOOL enabledAutorotation;
 @property (nonatomic, readonly) BOOL shouldAutorotateDefaultValue;

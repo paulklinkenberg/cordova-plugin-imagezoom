@@ -17,7 +17,7 @@
        under the License.
 */
 
-package org.apache.cordova.splashscreen;
+package org.apache.cordova.imagezoom;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -47,9 +47,9 @@ import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class SplashScreen extends CordovaPlugin {
-    private static final String LOG_TAG = "SplashScreen";
-    // Cordova 3.x.x has a copy of this plugin bundled with it (SplashScreenInternal.java).
+public class ImageZoom extends CordovaPlugin {
+    private static final String LOG_TAG = "ImageZoom";
+    // Cordova 3.x.x has a copy of this plugin bundled with it (ImageZoomInternal.java).
     // Enable functionality only if running on 4.x.x.
     private static final boolean HAS_BUILT_IN_SPLASH_SCREEN = Integer.valueOf(CordovaWebView.CORDOVA_VERSION.split("\\.")[0]) < 4;
     private static final int DEFAULT_SPLASHSCREEN_DURATION = 3000;
@@ -80,7 +80,7 @@ public class SplashScreen extends CordovaPlugin {
 
     private int getSplashId() {
         int drawableId = 0;
-        String splashResource = preferences.getString("SplashScreen", "screen");
+        String splashResource = preferences.getString("ImageZoom", "screen");
         if (splashResource != null) {
             drawableId = cordova.getActivity().getResources().getIdentifier(splashResource, "drawable", cordova.getActivity().getClass().getPackage().getName());
             if (drawableId == 0) {
@@ -109,8 +109,8 @@ public class SplashScreen extends CordovaPlugin {
         orientation = cordova.getActivity().getResources().getConfiguration().orientation;
 
         if (firstShow) {
-            boolean autoHide = preferences.getBoolean("AutoHideSplashScreen", true);
-            showSplashScreen(autoHide);
+            boolean autoHide = preferences.getBoolean("AutoHideImageZoom", true);
+            showImageZoom(autoHide);
         }
 
         if (preferences.getBoolean("SplashShowOnlyFirstTime", true)) {
@@ -126,16 +126,16 @@ public class SplashScreen extends CordovaPlugin {
     }
 
     private int getFadeDuration () {
-        int fadeSplashScreenDuration = preferences.getBoolean("FadeSplashScreen", true) ?
-            preferences.getInteger("FadeSplashScreenDuration", DEFAULT_FADE_DURATION) : 0;
+        int fadeImageZoomDuration = preferences.getBoolean("FadeImageZoom", true) ?
+            preferences.getInteger("FadeImageZoomDuration", DEFAULT_FADE_DURATION) : 0;
 
-        if (fadeSplashScreenDuration < 30) {
+        if (fadeImageZoomDuration < 30) {
             // [CB-9750] This value used to be in decimal seconds, so we will assume that if someone specifies 10
             // they mean 10 seconds, and not the meaningless 10ms
-            fadeSplashScreenDuration *= 1000;
+            fadeImageZoomDuration *= 1000;
         }
 
-        return fadeSplashScreenDuration;
+        return fadeImageZoomDuration;
     }
 
     @Override
@@ -144,7 +144,7 @@ public class SplashScreen extends CordovaPlugin {
             return;
         }
         // hide the splash screen to avoid leaking a window
-        this.removeSplashScreen(true);
+        this.removeImageZoom(true);
     }
 
     @Override
@@ -153,7 +153,7 @@ public class SplashScreen extends CordovaPlugin {
             return;
         }
         // hide the splash screen to avoid leaking a window
-        this.removeSplashScreen(true);
+        this.removeImageZoom(true);
         // If we set this to true onDestroy, we lose track when we go from page to page!
         //firstShow = true;
     }
@@ -163,13 +163,13 @@ public class SplashScreen extends CordovaPlugin {
         if (action.equals("hide")) {
             cordova.getActivity().runOnUiThread(new Runnable() {
                 public void run() {
-                    webView.postMessage("splashscreen", "hide");
+                    webView.postMessage("imagezoom", "hide");
                 }
             });
         } else if (action.equals("show")) {
             cordova.getActivity().runOnUiThread(new Runnable() {
                 public void run() {
-                    webView.postMessage("splashscreen", "show");
+                    webView.postMessage("imagezoom", "show");
                 }
             });
         } else {
@@ -185,11 +185,11 @@ public class SplashScreen extends CordovaPlugin {
         if (HAS_BUILT_IN_SPLASH_SCREEN) {
             return null;
         }
-        if ("splashscreen".equals(id)) {
+        if ("imagezoom".equals(id)) {
             if ("hide".equals(data.toString())) {
-                this.removeSplashScreen(false);
+                this.removeImageZoom(false);
             } else {
-                this.showSplashScreen(false);
+                this.showImageZoom(false);
             }
         } else if ("spinner".equals(id)) {
             if ("stop".equals(data.toString())) {
@@ -216,16 +216,16 @@ public class SplashScreen extends CordovaPlugin {
         }
     }
 
-    private void removeSplashScreen(final boolean forceHideImmediately) {
+    private void removeImageZoom(final boolean forceHideImmediately) {
         cordova.getActivity().runOnUiThread(new Runnable() {
             public void run() {
         if (splashDialog != null && splashImageView != null && splashDialog.isShowing()) {//check for non-null splashImageView, see https://issues.apache.org/jira/browse/CB-12277
-                    final int fadeSplashScreenDuration = getFadeDuration();
+                    final int fadeImageZoomDuration = getFadeDuration();
                     // CB-10692 If the plugin is being paused/destroyed, skip the fading and hide it immediately
-                    if (fadeSplashScreenDuration > 0 && forceHideImmediately == false) {
+                    if (fadeImageZoomDuration > 0 && forceHideImmediately == false) {
                         AlphaAnimation fadeOut = new AlphaAnimation(1, 0);
                         fadeOut.setInterpolator(new DecelerateInterpolator());
-                        fadeOut.setDuration(fadeSplashScreenDuration);
+                        fadeOut.setDuration(fadeImageZoomDuration);
 
                         splashImageView.setAnimation(fadeOut);
                         splashImageView.startAnimation(fadeOut);
@@ -264,12 +264,12 @@ public class SplashScreen extends CordovaPlugin {
      * Shows the splash screen over the full Activity
      */
     @SuppressWarnings("deprecation")
-    private void showSplashScreen(final boolean hideAfterDelay) {
-        final int splashscreenTime = preferences.getInteger("SplashScreenDelay", DEFAULT_SPLASHSCREEN_DURATION);
+    private void showImageZoom(final boolean hideAfterDelay) {
+        final int imagezoomTime = preferences.getInteger("ImageZoomDelay", DEFAULT_SPLASHSCREEN_DURATION);
         final int drawableId = getSplashId();
 
-        final int fadeSplashScreenDuration = getFadeDuration();
-        final int effectiveSplashDuration = Math.max(0, splashscreenTime - fadeSplashScreenDuration);
+        final int fadeImageZoomDuration = getFadeDuration();
+        final int effectiveSplashDuration = Math.max(0, imagezoomTime - fadeImageZoomDuration);
 
         lastHideAfterDelay = hideAfterDelay;
 
@@ -281,7 +281,7 @@ public class SplashScreen extends CordovaPlugin {
         if (splashDialog != null && splashDialog.isShowing()) {
             return;
         }
-        if (drawableId == 0 || (splashscreenTime <= 0 && hideAfterDelay)) {
+        if (drawableId == 0 || (imagezoomTime <= 0 && hideAfterDelay)) {
             return;
         }
 
@@ -324,7 +324,7 @@ public class SplashScreen extends CordovaPlugin {
                 splashDialog.setCancelable(false);
                 splashDialog.show();
 
-                if (preferences.getBoolean("ShowSplashScreenSpinner", true)) {
+                if (preferences.getBoolean("ShowImageZoomSpinner", true)) {
                     spinnerStart();
                 }
 
@@ -334,7 +334,7 @@ public class SplashScreen extends CordovaPlugin {
                     handler.postDelayed(new Runnable() {
                         public void run() {
                             if (lastHideAfterDelay) {
-                                removeSplashScreen(false);
+                                removeImageZoom(false);
                             }
                         }
                     }, effectiveSplashDuration);
@@ -369,7 +369,7 @@ public class SplashScreen extends CordovaPlugin {
                 progressBar.setLayoutParams(layoutParams);
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    String colorName = preferences.getString("SplashScreenSpinnerColor", null);
+                    String colorName = preferences.getString("ImageZoomSpinnerColor", null);
                     if(colorName != null){
                         int[][] states = new int[][] {
                             new int[] { android.R.attr.state_enabled}, // enabled

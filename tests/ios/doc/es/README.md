@@ -17,7 +17,7 @@
 #         under the License.
 -->
 
-# Pruebas de iOS para CDVSplashScreen
+# Pruebas de iOS para CDVImageZoom
 
 Necesita instalar `node.js` en `Córdoba-ios`.
 
@@ -30,8 +30,8 @@ Primero instalar cordova-ios:
 
 # Prueba de Xcode
 
-  1. Iniciar el archivo `CDVSplashScreenTest.xcworkspace` .
-  2. Elija "CDVSplashScreenLibTests" en el menú de lista desplegable esquema
+  1. Iniciar el archivo `CDVImageZoomTest.xcworkspace` .
+  2. Elija "CDVImageZoomLibTests" en el menú de lista desplegable esquema
   3. Haga clic y mantenga el botón de `Play` y elegir el icono de `llave inglesa` para ejecutar las pruebas
 
 # Pruebas desde la línea de comandos

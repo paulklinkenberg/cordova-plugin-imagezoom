@@ -19,9 +19,9 @@
 -->
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="cordova-plugin-splashscreen-tests"
+    id="cordova-plugin-imagezoom-tests"
     version="5.0.3-dev">
-    <name>Cordova Splashscreen Plugin Tests</name>
+    <name>Cordova Imagezoom Plugin Tests</name>
     <license>Apache 2.0</license>
 
     <js-module src="tests.js" name="tests">

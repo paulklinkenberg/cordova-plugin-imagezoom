@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E9F51AB19DA10AE00DA31AC /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F51A919DA10AE00DA31AC /* CDVSplashScreen.m */; };
+		7E9F51AB19DA10AE00DA31AC /* CDVImageZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F51A919DA10AE00DA31AC /* CDVImageZoom.m */; };
 		7E9F51B119DA114400DA31AC /* ImageNameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F51B019DA114400DA31AC /* ImageNameTest.m */; };
 		7E9F51B319DA116500DA31AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9F51B219DA116500DA31AC /* Foundation.framework */; };
 		7E9F51B519DA127E00DA31AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9F51B419DA127E00DA31AC /* UIKit.framework */; };
 		7E9F51B819DA14FD00DA31AC /* ImageNameTestDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F51B719DA14FD00DA31AC /* ImageNameTestDelegates.m */; };
-		7E9F51B919DA1B1600DA31AC /* libCDVSplashScreenLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9F519519DA102000DA31AC /* libCDVSplashScreenLib.a */; };
+		7E9F51B919DA1B1600DA31AC /* libCDVImageZoomLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9F519519DA102000DA31AC /* libCDVImageZoomLib.a */; };
 		7E9F51BA19DA1B2000DA31AC /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9F519019DA0F8300DA31AC /* libCordova.a */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 			containerPortal = 7E9F517219DA09CE00DA31AC /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E9F519419DA102000DA31AC;
-			remoteInfo = CDVSplashScreenLib;
+			remoteInfo = CDVImageZoomLib;
 		};
 		7E9F51AE19DA10E100DA31AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -54,11 +54,11 @@
 
 /* Begin PBXFileReference section */
 		7E9F518B19DA0F8300DA31AC /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = "../node_modules/cordova-ios/CordovaLib/CordovaLib.xcodeproj"; sourceTree = "<group>"; };
-		7E9F519519DA102000DA31AC /* libCDVSplashScreenLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCDVSplashScreenLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E9F519F19DA102000DA31AC /* CDVSplashScreenLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDVSplashScreenLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9F519519DA102000DA31AC /* libCDVImageZoomLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCDVImageZoomLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9F519F19DA102000DA31AC /* CDVImageZoomLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDVImageZoomLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9F51A219DA102000DA31AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E9F51A919DA10AE00DA31AC /* CDVSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = ../../../src/ios/CDVSplashScreen.m; sourceTree = SOURCE_ROOT; };
-		7E9F51AA19DA10AE00DA31AC /* CDVSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = ../../../src/ios/CDVSplashScreen.h; sourceTree = SOURCE_ROOT; };
+		7E9F51A919DA10AE00DA31AC /* CDVImageZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVImageZoom.m; path = ../../../src/ios/CDVImageZoom.m; sourceTree = SOURCE_ROOT; };
+		7E9F51AA19DA10AE00DA31AC /* CDVImageZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVImageZoom.h; path = ../../../src/ios/CDVImageZoom.h; sourceTree = SOURCE_ROOT; };
 		7E9F51B019DA114400DA31AC /* ImageNameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageNameTest.m; sourceTree = "<group>"; };
 		7E9F51B219DA116500DA31AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7E9F51B419DA127E00DA31AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -79,7 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9F51BA19DA1B2000DA31AC /* libCordova.a in Frameworks */,
-				7E9F51B919DA1B1600DA31AC /* libCDVSplashScreenLib.a in Frameworks */,
+				7E9F51B919DA1B1600DA31AC /* libCDVImageZoomLib.a in Frameworks */,
 				7E9F51B519DA127E00DA31AC /* UIKit.framework in Frameworks */,
 				7E9F51B319DA116500DA31AC /* Foundation.framework in Frameworks */,
 			);
@@ -94,8 +94,8 @@
 				7E9F51B419DA127E00DA31AC /* UIKit.framework */,
 				7E9F51B219DA116500DA31AC /* Foundation.framework */,
 				7E9F518B19DA0F8300DA31AC /* CordovaLib.xcodeproj */,
-				7E9F519619DA102000DA31AC /* CDVSplashScreenLib */,
-				7E9F51A019DA102000DA31AC /* CDVSplashScreenLibTests */,
+				7E9F519619DA102000DA31AC /* CDVImageZoomLib */,
+				7E9F51A019DA102000DA31AC /* CDVImageZoomLibTests */,
 				7E9F517D19DA0A0A00DA31AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,8 +103,8 @@
 		7E9F517D19DA0A0A00DA31AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7E9F519519DA102000DA31AC /* libCDVSplashScreenLib.a */,
-				7E9F519F19DA102000DA31AC /* CDVSplashScreenLibTests.xctest */,
+				7E9F519519DA102000DA31AC /* libCDVImageZoomLib.a */,
+				7E9F519F19DA102000DA31AC /* CDVImageZoomLibTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,16 +117,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7E9F519619DA102000DA31AC /* CDVSplashScreenLib */ = {
+		7E9F519619DA102000DA31AC /* CDVImageZoomLib */ = {
 			isa = PBXGroup;
 			children = (
-				7E9F51A919DA10AE00DA31AC /* CDVSplashScreen.m */,
-				7E9F51AA19DA10AE00DA31AC /* CDVSplashScreen.h */,
+				7E9F51A919DA10AE00DA31AC /* CDVImageZoom.m */,
+				7E9F51AA19DA10AE00DA31AC /* CDVImageZoom.h */,
 			);
-			path = CDVSplashScreenLib;
+			path = CDVImageZoomLib;
 			sourceTree = SOURCE_ROOT;
 		};
-		7E9F51A019DA102000DA31AC /* CDVSplashScreenLibTests */ = {
+		7E9F51A019DA102000DA31AC /* CDVImageZoomLibTests */ = {
 			isa = PBXGroup;
 			children = (
 				7E9F51A119DA102000DA31AC /* Supporting Files */,
@@ -134,7 +134,7 @@
 				7E9F51B619DA12C600DA31AC /* ImageNameTestDelegates.h */,
 				7E9F51B719DA14FD00DA31AC /* ImageNameTestDelegates.m */,
 			);
-			path = CDVSplashScreenLibTests;
+			path = CDVImageZoomLibTests;
 			sourceTree = "<group>";
 		};
 		7E9F51A119DA102000DA31AC /* Supporting Files */ = {
@@ -148,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7E9F519419DA102000DA31AC /* CDVSplashScreenLib */ = {
+		7E9F519419DA102000DA31AC /* CDVImageZoomLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E9F51A319DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVSplashScreenLib" */;
+			buildConfigurationList = 7E9F51A319DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVImageZoomLib" */;
 			buildPhases = (
 				7E9F519119DA102000DA31AC /* Sources */,
 				7E9F519219DA102000DA31AC /* Frameworks */,
@@ -160,14 +160,14 @@
 			);
 			dependencies = (
 			);
-			name = CDVSplashScreenLib;
-			productName = CDVSplashScreenLib;
-			productReference = 7E9F519519DA102000DA31AC /* libCDVSplashScreenLib.a */;
+			name = CDVImageZoomLib;
+			productName = CDVImageZoomLib;
+			productReference = 7E9F519519DA102000DA31AC /* libCDVImageZoomLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		7E9F519E19DA102000DA31AC /* CDVSplashScreenLibTests */ = {
+		7E9F519E19DA102000DA31AC /* CDVImageZoomLibTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E9F51A619DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVSplashScreenLibTests" */;
+			buildConfigurationList = 7E9F51A619DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVImageZoomLibTests" */;
 			buildPhases = (
 				7E9F519B19DA102000DA31AC /* Sources */,
 				7E9F519C19DA102000DA31AC /* Frameworks */,
@@ -179,9 +179,9 @@
 				7E9F51AF19DA10E100DA31AC /* PBXTargetDependency */,
 				7E9F51AD19DA10DE00DA31AC /* PBXTargetDependency */,
 			);
-			name = CDVSplashScreenLibTests;
-			productName = CDVSplashScreenLibTests;
-			productReference = 7E9F519F19DA102000DA31AC /* CDVSplashScreenLibTests.xctest */;
+			name = CDVImageZoomLibTests;
+			productName = CDVImageZoomLibTests;
+			productReference = 7E9F519F19DA102000DA31AC /* CDVImageZoomLibTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7E9F517519DA09CE00DA31AC /* Build configuration list for PBXProject "CDVSplashScreenTest" */;
+			buildConfigurationList = 7E9F517519DA09CE00DA31AC /* Build configuration list for PBXProject "CDVImageZoomTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,8 +218,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				7E9F519419DA102000DA31AC /* CDVSplashScreenLib */,
-				7E9F519E19DA102000DA31AC /* CDVSplashScreenLibTests */,
+				7E9F519419DA102000DA31AC /* CDVImageZoomLib */,
+				7E9F519E19DA102000DA31AC /* CDVImageZoomLibTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E9F51AB19DA10AE00DA31AC /* CDVSplashScreen.m in Sources */,
+				7E9F51AB19DA10AE00DA31AC /* CDVImageZoom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +267,7 @@
 /* Begin PBXTargetDependency section */
 		7E9F51AD19DA10DE00DA31AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7E9F519419DA102000DA31AC /* CDVSplashScreenLib */;
+			target = 7E9F519419DA102000DA31AC /* CDVImageZoomLib */;
 			targetProxy = 7E9F51AC19DA10DE00DA31AC /* PBXContainerItemProxy */;
 		};
 		7E9F51AF19DA10E100DA31AC /* PBXTargetDependency */ = {
@@ -418,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CDVSplashScreenLibTests/Info.plist;
+				INFOPLIST_FILE = CDVImageZoomLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -459,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CDVSplashScreenLibTests/Info.plist;
+				INFOPLIST_FILE = CDVImageZoomLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -472,7 +472,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7E9F517519DA09CE00DA31AC /* Build configuration list for PBXProject "CDVSplashScreenTest" */ = {
+		7E9F517519DA09CE00DA31AC /* Build configuration list for PBXProject "CDVImageZoomTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E9F517619DA09CE00DA31AC /* Debug */,
@@ -481,7 +481,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E9F51A319DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVSplashScreenLib" */ = {
+		7E9F51A319DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVImageZoomLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E9F51A419DA102000DA31AC /* Debug */,
@@ -490,7 +490,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E9F51A619DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVSplashScreenLibTests" */ = {
+		7E9F51A619DA102000DA31AC /* Build configuration list for PBXNativeTarget "CDVImageZoomLibTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E9F51A719DA102000DA31AC /* Debug */,

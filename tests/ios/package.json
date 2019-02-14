@@ -1,13 +1,13 @@
 {
-    "name": "cordova-plugin-splashscreen-test-ios",
+    "name": "cordova-plugin-imagezoom-test-ios",
     "version": "1.0.0",
-    "description": "iOS Unit Tests for Splashscreen Plugin",
+    "description": "iOS Unit Tests for Imagezoom Plugin",
     "author": "Apache Software Foundation",
     "license": "Apache Version 2.0",
     "dependencies": {
         "cordova-ios": "*"
     },
     "scripts": {
-        "test": "xcodebuild test -workspace CDVSplashScreenTest.xcworkspace -scheme CDVSplashScreenLibTests -destination 'platform=iOS Simulator,name=iPhone 5' CONFIGURATION_BUILD_DIR='/tmp' HEADER_SEARCH_PATHS='$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include'"
+        "test": "xcodebuild test -workspace CDVImageZoomTest.xcworkspace -scheme CDVImageZoomLibTests -destination 'platform=iOS Simulator,name=iPhone 5' CONFIGURATION_BUILD_DIR='/tmp' HEADER_SEARCH_PATHS='$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include'"
     }
 }

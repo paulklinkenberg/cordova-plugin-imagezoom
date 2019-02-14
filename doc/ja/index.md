@@ -17,13 +17,13 @@
     under the License.
 -->
 
-# cordova-plugin-splashscreen
+# cordova-plugin-imagezoom
 
 このプラグインが表示され、アプリケーションの起動中にスプラッシュ スクリーンを非表示にします。
 
 ## インストール
 
-    cordova plugin add cordova-plugin-splashscreen
+    cordova plugin add cordova-plugin-imagezoom
     
 
 ## サポートされているプラットフォーム
@@ -37,42 +37,42 @@
 
 ## メソッド
 
-*   splashscreen.show
-*   splashscreen.hide
+*   imagezoom.show
+*   imagezoom.hide
 
 ### Android の癖
 
 あなたの config.xml を以下の設定を追加する必要があります。
 
-    <preference name="SplashScreen" value="foo" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="ImageZoom" value="foo" />
+    <preference name="ImageZoomDelay" value="10000" />
     
 
-Foo ができれば 9 パッチファイル splashscreen ファイルの名前です。 解像度/xml ディレクトリの適切なフォルダーの下に splashcreen ファイルを追加することを確認します。 2 番目のパラメーターは、スプラッシュ ・ スクリーンがの表示時間 (ミリ秒単位) を表します。 デフォルトでは 3000 ミリ秒です。 詳細については、[アイコンとスプラッシュ画面][1] を参照してください。
+Foo ができれば 9 パッチファイル imagezoom ファイルの名前です。 解像度/xml ディレクトリの適切なフォルダーの下に splashcreen ファイルを追加することを確認します。 2 番目のパラメーターは、スプラッシュ ・ スクリーンがの表示時間 (ミリ秒単位) を表します。 デフォルトでは 3000 ミリ秒です。 詳細については、[アイコンとスプラッシュ画面][1] を参照してください。
 
  [1]: http://cordova.apache.org/docs/en/edge/config_ref_images.md.html
 
-## splashscreen.hide
+## imagezoom.hide
 
 スプラッシュ スクリーンを閉じます。
 
-    navigator.splashscreen.hide();
+    navigator.imagezoom.hide();
     
 
 ### ブラックベリー 10、WP8、iOS の気まぐれ
 
-`config.xml` ファイルの `AutoHideSplashScreen` の設定は `false` である必要があります。 遅延を 2 秒間スプラッシュ スクリーンを非表示に `deviceready` イベント ハンドラーで、次のようタイマーを追加します。
+`config.xml` ファイルの `AutoHideImageZoom` の設定は `false` である必要があります。 遅延を 2 秒間スプラッシュ スクリーンを非表示に `deviceready` イベント ハンドラーで、次のようタイマーを追加します。
 
         setTimeout(function() {
-            navigator.splashscreen.hide();
+            navigator.imagezoom.hide();
         }, 2000);
     
 
-## splashscreen.show
+## imagezoom.show
 
 スプラッシュ画面が表示されます。
 
-    navigator.splashscreen.show();
+    navigator.imagezoom.show();
     
 
-アプリが開始され、`deviceready` イベントが発生するまで、アプリケーションは `navigator.splashscreen.show()` を呼び出すことはできません。 しかし、以来、通常スプラッシュ画面アプリ開始前に表示するものですと思われる、スプラッシュ スクリーンの目的の敗北します。 `config.xml` にいくつかの構成を提供するは自動的に `表示` スプラッシュ画面、アプリを起動後すぐに、それが完全に起動し、`deviceready` イベントを受信する前に。 詳細についてはこの構成を行うには、[アイコンとスプラッシュ画面][1] を参照してください。 この理由のためにアプリ起動時のスプラッシュ スクリーンを確認 `navigator.splashscreen.show()` をコールする必要がある可能性が高いです。
+アプリが開始され、`deviceready` イベントが発生するまで、アプリケーションは `navigator.imagezoom.show()` を呼び出すことはできません。 しかし、以来、通常スプラッシュ画面アプリ開始前に表示するものですと思われる、スプラッシュ スクリーンの目的の敗北します。 `config.xml` にいくつかの構成を提供するは自動的に `表示` スプラッシュ画面、アプリを起動後すぐに、それが完全に起動し、`deviceready` イベントを受信する前に。 詳細についてはこの構成を行うには、[アイコンとスプラッシュ画面][1] を参照してください。 この理由のためにアプリ起動時のスプラッシュ スクリーンを確認 `navigator.imagezoom.show()` をコールする必要がある可能性が高いです。
