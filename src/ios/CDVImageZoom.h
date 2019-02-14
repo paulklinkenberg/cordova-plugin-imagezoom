@@ -36,6 +36,8 @@ typedef struct {
     UIImageView* _imageView;
     NSString* _curImageName;
     BOOL _destroyed;
+    NSString* imageURL;
+    NSDictionary *options;
 }
 
 - (void)show:(CDVInvokedUrlCommand*)command;

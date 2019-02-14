@@ -22,9 +22,6 @@
 #import <Cordova/CDVScreenOrientationDelegate.h>
 #import "CDVViewController+ImageZoom.h"
 
-#define imageURL @""
-#define options nil
-
 @implementation CDVImageZoom
 
 
@@ -57,7 +54,7 @@
 
     // Set the frame & image later.
     _imageView = [[UIImageView alloc] init];
-    _imageView.contentMode = .ScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
     [parentView addSubview:_imageView];
     
     // Frame is required when launching in portrait mode.
@@ -173,7 +170,7 @@
         UIImage* img = [UIImage imageNamed:imageURL];
         
         // https://developer.apple.com/documentation/uikit/uiimage/1624127-resizableimage
-        _imageView.image = img.resizableimage(0);
+        _imageView.image = img;//img.resizableimage(0);
     }
 
     // Check that image exists before updating bounds
@@ -183,7 +180,7 @@
     }
     else
     {
-        NSLog(@"WARNING: The imagezoom image named %@ was not found", imageName);
+        NSLog(@"WARNING: The imagezoom image named %@ was not found", imageURL);
     }
 }
 
