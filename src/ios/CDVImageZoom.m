@@ -50,17 +50,19 @@
     [(CDVViewController *)self.viewController setEnabledAutorotation:autorotateValue];
 
     UIView* parentView = self.viewController.view;
-//PK    parentView.userInteractionEnabled = NO;  // disable user interaction while imagezoom is shown
+    
+    _scrollView = [[UIScrollView alloc] init];
+    [parentView addSubview:_scrollView];
 
     // Set the frame & image later.
     _imageView = [[UIImageView alloc] init];
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [parentView addSubview:_imageView];
+    [_scrollView addSubview:_imageView];
     
     // Frame is required when launching in portrait mode.
     // Bounds for landscape since it captures the rotation.
-    [parentView addObserver:self forKeyPath:@"frame" options:0 context:nil];
-    [parentView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+//    [parentView addObserver:self forKeyPath:@"frame" options:0 context:nil];
+//    [parentView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
 
     [self updateImage];
     _destroyed = NO;
@@ -75,8 +77,10 @@
     [_imageView removeFromSuperview];
     _imageView = nil;
     _curImageName = nil;
+    [_scrollView removeFromSuperview];
+    _scrollView = nil;
 
-    @try {
+/*    @try {
         [self.viewController.view removeObserver:self forKeyPath:@"frame"];
         [self.viewController.view removeObserver:self forKeyPath:@"bounds"];
     }
@@ -86,6 +90,7 @@
         // that we can safely ignore.
         // Alternatively we can check whether there are observers before calling removeObserver
     }
+*/
 }
 
 - (CDV_iOSDevice) getCurrentDevice
@@ -111,16 +116,6 @@
     device.iPhoneX  = (device.iPhone && limit == 812.0);
 
     return device;
-}
-
-// PK remove this later
-- (BOOL) isUsingCDVLaunchScreen {
-    NSString* launchStoryboardName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UILaunchStoryboardName"];
-    if (launchStoryboardName) {
-        return ([launchStoryboardName isEqualToString:@"CDVLaunchScreen"]);
-    } else {
-        return NO;
-    }
 }
 
 
@@ -186,7 +181,7 @@
 
 - (void)updateBounds
 {
-    _imageView.frame = CGRectMake(100, 50, 200, 400);
+    _scrollView.frame = _imageView.frame = CGRectMake(100, 50, 200, 400);
 }
 
 - (void)setVisible

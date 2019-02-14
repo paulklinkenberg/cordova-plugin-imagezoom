@@ -33,6 +33,8 @@ typedef struct {
 } CDV_iOSDevice;
 
 @interface CDVImageZoom : CDVPlugin {
+    // https://stackoverflow.com/questions/500027/how-to-zoom-in-out-an-uiimage-object-when-user-pinches-screen#25457548
+    UIScrollView* _scrollView;
     UIImageView* _imageView;
     NSString* _curImageName;
     BOOL _destroyed;
