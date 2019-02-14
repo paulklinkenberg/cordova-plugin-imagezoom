@@ -20,10 +20,10 @@
 */
 
 var exec = require('cordova/exec');
-
+// exec(success, fail, x,y, opts)
 var imagezoom = {
-    show:function() {
-        exec(null, null, "ImageZoom", "show", []);
+    show:function(imageURL, options) {
+        exec(null, null, "ImageZoom", "show", [imageURL, options]);
     },
     hide:function() {
         exec(null, null, "ImageZoom", "hide", []);
